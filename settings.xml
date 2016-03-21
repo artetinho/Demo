@@ -1,0 +1,77 @@
+make a change
+<?xml version="1.0" encoding="UTF-8"?>
+<settings xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd" xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <servers>
+    <server>
+      <username>admin</username>
+      <password>password</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>admin</username>
+      <password>password</password>
+      <id>snapshots</id>
+    </server>
+
+     <server>
+      <username>admin</username>
+      <password>password</password>
+      <id>com.misfit.ta</id>
+    </server>
+  </servers>
+  <mirrors>
+    <mirror>
+      <mirrorOf>*</mirrorOf>
+      <name>repo</name>
+      <url>http://artifactory.int.misfit.com:8081/artifactory/repo</url>
+      <id>repo</id>
+    </mirror>
+  </mirrors>
+  <profiles>
+    <profile>
+      <repositories>
+        <repository>                                               
+          <id>morphia.repository</id>      
+          <name>morphia</name>                      
+          <url>http://morphia.googlecode.com/svn/mavenrepo/</url>
+        </repository>   
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>repo</name>
+          <url>http://artifactory.int.misfit.com:8081/artifactory/repo</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>repo</name>
+          <url>http://artifactory.int.misfit.com:8081/artifactory/repo</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>repo</name>
+          <url>http://artifactory.int.misfit.com:8081/artifactory/repo</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>repo</name>
+          <url>http://artifactory.int.misfit.com:8081/artifactory/repo</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+</settings>
+
